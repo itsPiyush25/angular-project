@@ -10,3 +10,24 @@
     </a>
 </form>
 <h1> Its my {{title}} </h1>
+
+<form>
+    <input
+     type = "text"
+     placeholder = "Enter Username"
+     [(ngModel)] = "username"
+     name="username"
+    />
+
+    <input
+     type = "password"
+     placeholder = "Enter Password"
+     [(ngModel)] = "password"
+     name="password"
+    />
+
+    <button type="button" (click)="onLogin()">Login</button>
+    
+</form>
+
+<p></p>

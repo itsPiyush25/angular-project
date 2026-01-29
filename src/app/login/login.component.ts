@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginRequest, LoginUser } from './login.model';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +9,11 @@ import { LoginRequest, LoginUser } from './login.model';
 })
 export class LoginComponent {
   title : string  = 'Login Page';
-
   username : string = '';
   password : string = '';
+
+  constructor(private authService : AuthService){}
+
 
   onLogin():void{
     
@@ -23,9 +26,13 @@ export class LoginComponent {
       // email : this.email
     };
 
-    if(!this.username || !this.password){
-      alert("Username/Password required...");
-      return;
+    const isValid = this.authService.login(loginData);
+
+    if (isValid) {
+      console.log(this.authService.getWelcomeMessage());
+      alert('Login successful');
+    } else {
+      alert('Invalid credentials');
     }
 
     console.log('Login request:',{
@@ -40,6 +47,5 @@ export class LoginComponent {
 
     console.log(user.getWelcomeFromLogin());
     console.log(user.validateLogin('jarvis'));
-
   }
 }

@@ -15,6 +15,10 @@ export class SignUpComponent {
 
   constructor(private authService: AuthService) {}
 
+  onLogin = () => {
+  console.log(this.username);
+}
+
   onSignUp(): void {
 
     if (!this.username || !this.password || !this.email) {

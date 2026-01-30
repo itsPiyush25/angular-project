@@ -7,4 +7,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pj-angular-app';
+  username = 'piyush';
+  count = 7;
+  name = '';
+
+  isDisabled = true;
+
+  increment() {
+    this.count++;
+  }
+
+  decrement() {
+    this.count--;
+  }
+
+  reset(){
+    this.count = 0;
+  }
+
+
 }

@@ -1,3 +1,37 @@
 <h1>hii piyush</h1>
 <app-login></app-login>
 <app-sign-up></app-sign-up>
+
+
+
+<!-- interpolation -->
+<p>Hii {{username}} from interpolation</p>
+
+<p>Count + 1 -- {{ count + 1 }}</p>
+
+
+<!-- property binding -->
+<!-- Binds a DOM property to a component variable. -->
+
+<button [disabled]="isDisabled">Click Me</button>
+
+<button (click)="increment()">+</button>
+<p>{{ count }}</p>
+
+
+<!-- two-way binding -->
+
+<input [(ngModel)]="name" placeholder="Enter your name">
+<p>You typed: {{ name }}</p>
+
+
+
+<!-- counter app demo -->
+
+<h2>Counter App</h2>
+
+<p>Count: {{ count }}</p>
+
+<button (click)="increment()">+</button>
+<button (click)="decrement()">-</button>
+<button (click)="reset()">Reset</button>

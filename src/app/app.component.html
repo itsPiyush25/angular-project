@@ -2,8 +2,6 @@
 <app-login></app-login>
 <app-sign-up></app-sign-up>
 
-
-
 <!-- interpolation -->
 <p>Hii {{username}} from interpolation</p>
 
@@ -25,7 +23,6 @@
 <p>You typed: {{ name }}</p>
 
 
-
 <!-- counter app demo -->
 
 <h2>Counter App</h2>
@@ -35,3 +32,61 @@
 <button (click)="increment()">+</button>
 <button (click)="decrement()">-</button>
 <button (click)="reset()">Reset</button>
+
+<!-- 2/2/26  directives implementation -->
+
+<!-- ngIf demonstration  structural directive-->
+
+<h1 *ngIf ="display">display</h1>
+
+
+<!-- ngFor demonstration structural -->
+
+<ul>
+    <li *ngFor = "let x of courseList">
+        {{x}}
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor = "let ci of courseInfo">
+        {{ci.name+": "+ci.age}}
+    </li>
+</ul>
+
+<h1>** ngIf directives in angular </h1>
+
+<div *ngIf="login; else elseBlock">
+    <a href="">logout</a>    
+</div>
+
+<ng-template #elseBlock>
+
+</ng-template>
+
+<!-- ngCLass , ngStyle  -- attribute directive -->
+
+<p [ngClass]="{ 'active': isActive, 'disabled': !isActive }">
+  Status Text
+</p>
+
+<p [ngStyle]="{ color: isError ? 'red' : 'green' }">
+  Message
+</p>
+
+
+<h3>User List</h3>
+
+<ul *ngIf="courseInfo.length > 0; else noUsers">
+  <li *ngFor="let user of courseInfo"
+      [ngClass]="{ 'active-user': user.age }">
+    {{ user.name }}
+    <span *ngIf="user.age > 26">🟢</span>
+    <span *ngIf="!user.age">🔴</span>
+  </li>
+</ul>
+
+<ng-template #noUsers>
+  <p>No users found </p>
+</ng-template>
+

@@ -1,0 +1,16 @@
+<h2>Product List (Parent)</h2>
+
+<ul>
+  <li *ngFor="let product of products">
+    {{ product.name }} - ₹{{ product.price }}
+    <button (click)="onProductSelected(product)">View</button>
+  </li>
+</ul>
+
+<hr>
+
+<!-- Parent → Child -->
+<app-product-detail
+  [product]="selectedProduct"
+  (close)="selectedProduct = null">
+</app-product-detail>

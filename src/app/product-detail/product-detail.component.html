@@ -1,0 +1,8 @@
+<div *ngIf="product">
+  <h3>Product Detail (Child)</h3>
+
+  <p><b>Name:</b> {{ product.name }}</p>
+  <p><b>Price:</b> ₹{{ product.price }}</p>
+
+  <button (click)="closeDetail()">Close</button>
+</div>

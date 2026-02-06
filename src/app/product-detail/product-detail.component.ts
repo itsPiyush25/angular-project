@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Product } from '../models/product.model';
+import { SharedDataServiceService } from '../sevice/shared-data-service.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -8,8 +10,19 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class ProductDetailComponent {
 //Product list + product detail component
 
-  @Input() product: any;          // Parent → Child
+// “Angular will assign this input later.”
+  @Input() product!: Product;          // Parent → Child
   @Output() close = new EventEmitter<void>(); // Child → Parent
+
+  constructor(private sharedDataService : SharedDataServiceService){}
+
+  ngOnIt(){
+    this.sharedDataService.product$.subscribe(product=>{
+      if(product){
+        this.product = product;
+      }
+    });
+  }
 
   closeDetail() {
     this.close.emit();

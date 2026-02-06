@@ -1,0 +1,8 @@
+<h3>Dashboard</h3>
+
+<ul>
+  <li *ngFor="let product of products">
+    {{ product.name }} - {{ product.price }}
+    <button (click)="viewDetails(product)">View</button>
+  </li>
+</ul>

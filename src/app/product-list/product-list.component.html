@@ -2,15 +2,13 @@
 
 <ul>
   <li *ngFor="let product of products">
-    {{ product.name }} - ₹{{ product.price }}
-    <button (click)="onProductSelected(product)">View</button>
+    {{ product.name }} - ₹{{ product.price}}
+    <button (click)="selectedProduct(product)">View</button>
   </li>
 </ul>
 
 <hr>
 
 <!-- Parent → Child -->
-<app-product-detail
-  [product]="selectedProduct"
-  (close)="selectedProduct = null">
-</app-product-detail>
+<!-- Component loads only after clicking View -->
+<app-product-detail> </app-product-detail>

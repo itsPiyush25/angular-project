@@ -1,5 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+
   title = 'pj-angular-app';
   username = 'piyush';
   count = 7;
@@ -48,5 +50,7 @@ export class AppComponent {
   reset(){
     this.count = 0;
   }
+
+
 
 }

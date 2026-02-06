@@ -1,8 +1,14 @@
-<div *ngIf="product">
-  <h3>Product Detail (Child)</h3>
+<div *ngIf="product; else noData">
+  <h3>Product Detail</h3>
 
-  <p><b>Name:</b> {{ product.name }}</p>
-  <p><b>Price:</b> ₹{{ product.price }}</p>
+  <p><strong>ID:</strong> {{ product.id }}</p>
+  <p><strong>Name:</strong> {{ product.name }}</p>
+  <p><strong>Price:</strong> {{ product.price | currency:'INR' }}</p>
 
-  <button (click)="closeDetail()">Close</button>
+  <a routerLink="/product-list">Back</a>
 </div>
+
+<ng-template #noData>
+  <p>No product selected</p>
+  <a routerLink="/product-list">Back</a>
+</ng-template>

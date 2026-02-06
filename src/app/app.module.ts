@@ -11,6 +11,7 @@ import { ErrorComponent } from './error/error.component';
 import { InterpolationComponent } from './interpolation/interpolation.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     ErrorComponent,
     InterpolationComponent,
     ProductListComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,8 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { ProductService } from './sevice/product.service';
 
 @Component({
   selector: 'app-root',
@@ -9,48 +11,31 @@ import { RouterLink } from '@angular/router';
 })
 export class AppComponent {
 
-  title = 'pj-angular-app';
-  username = 'piyush';
-  count = 7;
-  name = '';
-  login = false
-  isActive = true
-  isError = false
+  constructor(private productService : ProductService){
 
-  courseList = ["DBMS","java","angular","spring boot","docker","K8","Postgres"];
-
-  courseInfo = [
-    {
-      name : 'piyush',
-      age : 24,
-      email : 'piyush.jogi@neosoftmail.com'
-    },
-    {
-      name : 'puneet',
-      age : 25,
-      email : 'puneet.arya@neosoftmail.com'
-    },
-    {
-      name : 'manav',
-      age : 28,
-      email : 'manav.singh@neosoftmail.com'
-    }
-  ]
-
-  isDisabled = true;
-  display = false;
-  increment() {
-    this.count++;
   }
 
-  decrement() {
-    this.count--;
+  ngOnInit(){
+    this.productService.getProductList().subscribe((data:any)=>{
+      console.log(data)
+   })
   }
 
-  reset(){
-    this.count = 0;
+  profileForm = new FormGroup({
+    name : new FormControl(),
+    password : new FormControl(),
+    email : new FormControl()
+  })
+
+  onSubmit(){
+    console.log("form submitted...")
   }
 
-
-
+  setValue(){
+    this.profileForm.setValue({
+      name : 'PJ',
+      password : 'Dev@2026',
+      email : 'piyushjogi23@gmail.com'
+    })
+  }
 }

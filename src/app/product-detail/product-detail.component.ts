@@ -11,8 +11,8 @@ export class ProductDetailComponent {
 //Product list + product detail component
 
 // “Angular will assign this input later.”
-  @Input() product!: Product;          // Parent → Child
-  @Output() close = new EventEmitter<void>(); // Child → Parent
+  @Input() product!: Product;          // Parent -> Child
+  @Output() close = new EventEmitter<void>(); // Child -> Parent
 
   constructor(private sharedDataService : SharedDataServiceService){}
 

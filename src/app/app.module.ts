@@ -15,6 +15,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import { SmartCompComponent } from './smart-comp/smart-comp.component';
+import { DumbCompComponent } from './dumb-comp/dumb-comp.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { UserFormComponent } from './user-form/user-form.component';
     ProductDetailComponent,
     DashboardComponent,
     UserListComponent,
-    UserFormComponent
+    UserFormComponent,
+    SmartCompComponent,
+    DumbCompComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 <h2>User Form</h2>
 
-<form [formGroup]="userForm" (ngSubmit)="submit()">
+<!-- <form [formGroup]="userForm" (ngSubmit)="submit()">
   <label>Name:</label>
   <input formControlName="name" />
 
@@ -8,4 +8,26 @@
   <input formControlName="email" />
 
   <button type="submit">Save</button>
+</form> -->
+
+
+<!-- template driven forms -->
+
+<h1>template driven forms</h1>
+
+<form #userForm = "ngForm" (ngSubmit)="addUser(userForm.value)">
+  <input #name="ngModel" type="text" required placeholder="Enter Name" name="Name" ngModel>
+  <span class="error" *ngIf="name.invalid && name.touched">Name is required</span>
+  <br><br>
+
+  <select name="" name = "gender" ngModel>
+    <option value="">Select Gender</option>
+    <option value="MALE">Male</option>
+    <option value="FEMALE">Female</option>
+  </select>
+  <br><br>
+
+  <button [disabled]="userForm.invalid">Add User</button>
 </form>
+
+

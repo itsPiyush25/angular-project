@@ -9,6 +9,11 @@ import { UserService } from '../sevice/user.service';
 })
 export class UserFormComponent implements OnInit {
 
+
+  addUser(arg0: any) {
+    throw new Error('Method not implemented.');
+  }
+
   userForm!: FormGroup;
   userId?: number;
 

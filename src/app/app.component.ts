@@ -11,15 +11,13 @@ import { ProductService } from './sevice/product.service';
 })
 export class AppComponent {
 
-  constructor(private productService : ProductService){
+  constructor(private productService : ProductService){}
 
-  }
-
-  ngOnInit(){
-    this.productService.getProductList().subscribe((data:any)=>{
-      console.log(data)
-   })
-  }
+  // ngOnInit(){
+  //   this.productService.getProductList().subscribe((data:any)=>{
+  //     console.log(data)
+  //  })
+  // }
 
   profileForm = new FormGroup({
     name : new FormControl(),

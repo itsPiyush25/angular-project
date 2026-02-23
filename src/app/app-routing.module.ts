@@ -9,6 +9,8 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 
 const routes: Routes = [
   { path : 'welcome', component : WelcomeComponent},
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: '', component: UserListComponent },
   { path: 'add', component: UserFormComponent },
   { path: 'edit/:id', component: UserFormComponent },
+  {path : 'profile', component : ProfileComponent},
+    {path : 'observable', component : ObservableDemoComponent},
   // wildcard for unmentioned path
   { path : '**', component : ErrorComponent},
   

@@ -17,6 +17,8 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { SmartCompComponent } from './smart-comp/smart-comp.component';
 import { DumbCompComponent } from './dumb-comp/dumb-comp.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { DumbCompComponent } from './dumb-comp/dumb-comp.component';
     UserListComponent,
     UserFormComponent,
     SmartCompComponent,
-    DumbCompComponent
+    DumbCompComponent,
+    ProfileComponent,
+    ObservableDemoComponent
   ],
   imports: [
     BrowserModule,
